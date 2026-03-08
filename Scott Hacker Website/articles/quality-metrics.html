@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 5 Quality Metrics Every CI Manager Should Track | Scott Hacker MBA | Kansas City Quality Leader</title>
+<meta name="description" content="Scott Hacker, Quality and CI Manager in Kansas City MO, shares the five metrics that actually predict quality performance — and why many common dashboards track the wrong things.">
+<meta name="keywords" content="Scott Hacker, Scott Hacker Kansas City, quality metrics, KPI manufacturing, continuous improvement metrics, quality dashboard, first pass yield">
+<meta name="author" content="Scott Hacker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.scottghacker.com/articles/quality-metrics.html">
+<meta property="og:title" content="The 5 Quality Metrics Every CI Manager Should Track | Scott Hacker MBA">
+<meta property="og:description" content="Scott Hacker, Quality and CI Manager in Kansas City MO, shares the five metrics that actually predict quality performance — and why many common dashboards track the wrong things.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.scottghacker.com/articles/quality-metrics.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The 5 Quality Metrics Every CI Manager Should Track",
+  "author": {"@type": "Person", "name": "Scott Hacker", "url": "https://www.scottghacker.com"},
+  "publisher": {"@type": "Person", "name": "Scott Hacker"},
+  "description": "Scott Hacker, Quality and CI Manager in Kansas City MO, shares the five metrics that actually predict quality performance — and why many common dashboards track the wrong things.",
+  "keywords": "quality metrics, KPI manufacturing, continuous improvement, Scott Hacker, Kansas City"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0d1b2a;--steel:#4a7fa5;--sky:#7eb8d4;--accent:#c9a84c;--accent-light:#e8c96b;--white:#f8f9fa;--gray-light:#e8ecef;--gray-mid:#b0bec5;--gray-dark:#546e7a;--text:#1c2b3a;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--text);background:var(--white)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,42,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.25);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .nav-brand{font-family:var(--serif);color:var(--white);font-size:1.1rem;font-weight:700;text-decoration:none}
+  .nav-brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;list-style:none}
+  .nav-links a{color:var(--gray-mid);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .article-hero{background:var(--navy);padding:120px 0 64px;position:relative;overflow:hidden}
+  .article-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(74,127,165,0.15) 0%,transparent 70%)}
+  .article-inner{max-width:760px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+  .article-breadcrumb{font-size:0.75rem;color:var(--gray-mid);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .article-breadcrumb a{color:var(--sky);text-decoration:none}
+  .article-breadcrumb span{opacity:0.5}
+  .article-category{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .article-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px}
+  .article-byline{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1)}
+  .byline-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0}
+  .byline-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .byline-name{font-weight:600;font-size:0.92rem;color:var(--white)}
+  .byline-meta{font-size:0.78rem;color:var(--gray-mid);margin-top:2px}
+  .article-body{max-width:760px;margin:0 auto;padding:64px 40px 100px;line-height:1.85}
+  .article-body p{font-size:1.05rem;color:#2c3e50;margin-bottom:24px;line-height:1.85}
+  .article-body h2{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--navy);margin:48px 0 20px;line-height:1.25}
+  .article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--navy);margin:32px 0 14px}
+  .article-body ul,.article-body ol{padding-left:24px;margin-bottom:24px}
+  .article-body li{font-size:1.02rem;color:#2c3e50;margin-bottom:10px;line-height:1.75}
+  .article-body strong{color:var(--navy);font-weight:600}
+  .article-body blockquote{border-left:4px solid var(--accent);padding:20px 24px;background:#f8f6f0;border-radius:0 6px 6px 0;margin:32px 0;font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--navy);line-height:1.6}
+  .callout{background:var(--navy);border-radius:8px;padding:28px 32px;margin:36px 0;color:var(--white)}
+  .callout-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:10px}
+  .callout p{color:var(--gray-mid);font-size:0.95rem;margin-bottom:0}
+  .divider{width:56px;height:3px;background:var(--accent);margin:40px 0}
+  .article-footer{background:var(--gray-light);border-top:1px solid #dde3e8;padding:48px 0}
+  .article-footer-inner{max-width:760px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+  .author-card{display:flex;gap:20px;align-items:flex-start}
+  .author-photo{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0}
+  .author-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .author-card-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .author-card-bio{font-size:0.85rem;color:var(--gray-dark);line-height:1.6;max-width:400px}
+  .back-link{font-size:0.82rem;font-weight:600;color:var(--steel);text-decoration:none;letter-spacing:0.05em;display:flex;align-items:center;gap:6px}
+  .back-link:hover{color:var(--navy)}
+  .back-link::before{content:"←"}
+  footer{background:var(--navy);border-top:1px solid rgba(201,168,76,0.2);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .footer-brand{font-family:var(--serif);color:var(--white);font-size:1rem;font-weight:700}
+  .footer-brand span{color:var(--accent)}
+  .footer-copy{font-size:0.75rem;color:var(--gray-dark)}
+  @media(max-width:700px){.article-inner,.article-body{padding-left:24px;padding-right:24px}nav{padding:0 20px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">Scott <span>Hacker</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#content-hub">Insights</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="article-hero">
+  <div class="article-inner">
+    <div class="article-breadcrumb">
+      <a href="../index.html">Home</a><span>/</span>
+      <a href="index.html">Articles</a><span>/</span>
+      <span>Metrics &amp; KPIs</span>
+    </div>
+    <div class="article-category">Metrics &amp; KPIs</div>
+    <h1 class="article-title">The 5 Quality Metrics Every CI Manager Should Track</h1>
+    <div class="article-byline">
+      <div class="byline-avatar"><img src="../headshot_web.jpg" alt="Scott Hacker MBA - Quality Manager Kansas City MO"></div>
+      <div>
+        <div class="byline-name">Scott Hacker, MBA</div>
+        <div class="byline-meta">Quality &amp; CI Manager · Safe Fleet · Kansas City, MO</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="article-body">
+
+  <p>Most quality dashboards I've inherited over my career share a common problem: they're excellent at telling you what went wrong last month and nearly useless at telling you what's about to go wrong next week. They measure outcomes — defect rates, scrap costs, customer returns — and present them as if measuring the problem is the same as managing it.</p>
+
+  <p>After years of building scorecards, running Kaizen events, and sitting in a lot of QBR meetings, I've narrowed my essential tracking list down to five metrics. Not because the others don't matter, but because these five have the highest signal-to-noise ratio for someone trying to <em>prevent</em> quality failures, not just count them.</p>
+
+  <blockquote>"Measure what matters. Everything else is noise that makes the signal harder to hear."</blockquote>
+
+  <div class="divider"></div>
+
+  <h2>1. First Pass Yield (FPY)</h2>
+  <p>First Pass Yield is the percentage of units that complete the entire production process without any rework, repair, or rejection. It's my single most important quality metric because it captures hidden factory cost that defect rates alone miss.</p>
+  <p>A plant can have a very low final defect rate — say 0.3% — and a terrible First Pass Yield of 72%. Those numbers tell completely different stories. The FPY tells you that nearly 30% of your product is being touched more than once, consuming labor, materials, and floor space that the customer isn't paying for.</p>
+  <p><strong>Target:</strong> Track by product line and by process step. A step with FPY below 95% deserves a root cause investigation.</p>
+
+  <h2>2. Escaped Defects (Customer Rejection Rate)</h2>
+  <p>Escaped defects — defects that your inspection process failed to catch before they reached the customer — are your most expensive quality failures. They carry warranty costs, expediting costs, potential line stoppages at your customer, and relationship damage that doesn't show up on any financial report.</p>
+  <p>More importantly, escaped defects tell you something specific: <strong>your detection system failed.</strong> Every escaped defect should trigger a review of the relevant FMEA and control plan to ask why the current controls didn't catch it. That review is more valuable than the defect count itself.</p>
+  <p><strong>Target:</strong> Zero escaped defects is the goal. Even one per quarter in a mature quality system deserves a formal 8D.</p>
+
+  <h2>3. Corrective Action Cycle Time</h2>
+  <p>This one rarely appears on quality dashboards, and it should. Corrective Action Cycle Time measures the average elapsed time from problem identification to verified closure of a corrective action. It's a direct measure of your organization's problem-solving velocity.</p>
+  <p>A shop floor with a 90-day average corrective action cycle time isn't managing quality — it's documenting it. Problems that take three months to close have almost certainly recurred multiple times during that window. Driving this number down to 30 days or less is one of the highest-leverage improvements a quality team can make.</p>
+  <p><strong>Target:</strong> 30 days or fewer for standard issues; 45–60 days for complex 8D investigations with supplier involvement.</p>
+
+  <div class="callout">
+    <div class="callout-title">Why This Metric Changes Behavior</div>
+    <p>When corrective action cycle time is visible on the quality dashboard, it creates accountability without finger-pointing. The team sees the number and asks "what's stuck, and how do we unstick it?" That's a much more productive conversation than reviewing a defect count.</p>
+  </div>
+
+  <h2>4. Cost of Poor Quality (COPQ)</h2>
+  <p>Cost of Poor Quality translates your quality performance into the language that gets leadership attention: dollars. COPQ captures internal failure costs (scrap, rework, reinspection), external failure costs (warranty, returns, field service), and appraisal costs (excess inspection driven by process instability).</p>
+  <p>Most organizations significantly undercount their COPQ because they only capture the obvious costs — scrap and warranty claims. The hidden costs of rework labor, expediting, and customer-relationship repair are rarely fully accounted for. When I've built comprehensive COPQ models, the real number is typically 2–4 times the initial estimate.</p>
+  <p><strong>Target:</strong> COPQ as a percentage of sales. World-class manufacturers typically operate below 1–2%. If you don't know your current number, calculating it for the first time is usually a sobering and motivating exercise.</p>
+
+  <h2>5. On-Time Closure Rate for Gemba-Identified Issues</h2>
+  <p>This is the metric I care most about as a CI leader, because it measures cultural health rather than just process performance. It tracks what percentage of issues identified during gemba walks, daily huddles, or operator observations are closed within a defined window — typically 72 hours for simple issues, 30 days for complex ones.</p>
+  <p>When this number is high, it means your organization has the habit of finding and fixing problems close to where and when they occur. When it's low, it means problems are being identified and then stalling — which quickly trains people to stop raising them.</p>
+  <p><strong>Target:</strong> 85%+ on-time closure rate. Below 70% is a culture signal, not just a process signal.</p>
+
+  <div class="divider"></div>
+  <h2>What to Do With These Five Numbers</h2>
+  <p>Track all five in a simple one-page dashboard reviewed weekly by the quality and operations leadership team. Trend them over 13 weeks so you can see direction, not just current state. When any metric moves in the wrong direction for two consecutive weeks, that's your trigger for a focused problem-solving session — not a wait-and-see posture.</p>
+  <p>The goal isn't a perfect score on any individual metric. The goal is an organization that sees problems clearly, responds to them quickly, and gets systematically better every month. These five metrics, tracked honestly and acted on consistently, will tell you whether that's happening.</p>
+  <p><em>— Scott Hacker, MBA | Quality &amp; CI Manager | Kansas City, MO</em></p>
+
+</div>
+<div class="article-footer">
+  <div class="article-footer-inner">
+    <div class="author-card">
+      <div class="author-photo"><img src="../headshot_web.jpg" alt="Scott Hacker MBA"></div>
+      <div>
+        <div class="author-card-name">Scott Hacker, MBA</div>
+        <p class="author-card-bio">Quality and Continuous Improvement Manager at Safe Fleet in Kansas City, MO. Lean Six Sigma Green Belt (Purdue). Writing about quality systems, CI leadership, and practical Lean thinking.</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-link">Back to All Articles</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-brand">Scott <span>Hacker</span>, MBA</div>
+  <div class="footer-copy">Quality &amp; CI Leader · Kansas City, MO · &copy; 2025</div>
+</footer>
+</body>
+</html>
