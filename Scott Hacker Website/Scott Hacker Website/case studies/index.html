@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles | Scott Hacker MBA | Quality and CI Leader | Kansas City MO</title>
+<meta name="description" content="Practical articles on Lean manufacturing, quality systems, and continuous improvement leadership from Scott Hacker MBA, Quality Manager in Kansas City MO.">
+<meta name="keywords" content="Scott Hacker, Scott Hacker Kansas City, lean manufacturing articles, quality improvement, continuous improvement, Kanban, 8D problem solving, FMEA, Kansas City quality manager">
+<meta name="author" content="Scott Hacker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.scottghacker.com/articles/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0d1b2a; --navy-light: #243b55; --steel: #4a7fa5; --sky: #7eb8d4;
+  --accent: #c9a84c; --accent-light: #e8c96b; --white: #f8f9fa;
+  --gray-light: #e8ecef; --gray-mid: #b0bec5; --gray-dark: #546e7a;
+  --text: #1c2b3a; --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); color: var(--text); background: var(--white); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,27,42,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { font-family: var(--serif); color: var(--white); font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { color: var(--gray-mid); text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.page-hero { background: var(--navy); padding: 110px 0 64px; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(74,127,165,0.15) 0%, transparent 70%); }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 60px; position: relative; z-index: 1; }
+.breadcrumb { font-size: 0.75rem; color: var(--gray-mid); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.breadcrumb a { color: var(--sky); text-decoration: none; }
+.breadcrumb span { opacity: 0.5; }
+.page-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.page-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+.page-subtitle { font-size: 1rem; color: var(--gray-mid); line-height: 1.7; max-width: 540px; }
+.page-body { max-width: 1100px; margin: 0 auto; padding: 72px 60px 100px; }
+.section-heading { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.section-divider { width: 48px; height: 3px; background: var(--accent); margin-bottom: 32px; }
+.article-row { display: grid; grid-template-columns: 48px 1fr 100px; gap: 24px; align-items: start; padding: 28px 0; border-bottom: 1px solid var(--gray-light); }
+.article-row:last-child { border-bottom: none; }
+.article-num { font-family: var(--serif); font-size: 2rem; font-weight: 900; color: var(--gray-light); line-height: 1; padding-top: 4px; }
+.article-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--steel); margin-bottom: 8px; }
+.article-title-link { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--navy); text-decoration: none; line-height: 1.35; display: block; margin-bottom: 8px; transition: color 0.2s; }
+.article-title-link:hover { color: var(--steel); }
+.article-excerpt { font-size: 0.88rem; color: var(--gray-dark); line-height: 1.7; margin-bottom: 10px; }
+.article-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.article-tag { font-size: 0.68rem; font-weight: 500; background: var(--gray-light); color: var(--steel); padding: 3px 8px; border-radius: 2px; }
+.read-btn { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--white); background: var(--steel); text-decoration: none; padding: 10px 18px; border-radius: 3px; text-align: center; transition: background 0.2s; margin-top: 4px; }
+.read-btn:hover { background: var(--navy); }
+footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.2); padding: 28px 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: var(--serif); color: var(--white); font-size: 1rem; font-weight: 700; }
+.footer-brand span { color: var(--accent); }
+.footer-copy { font-size: 0.75rem; color: var(--gray-dark); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 0.75rem; color: var(--gray-mid); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); }
+@media (max-width: 768px) { .hero-inner, .page-body { padding-left: 28px; padding-right: 28px; } nav { padding: 0 20px; } .nav-links { display: none; } footer { padding: 24px 28px; } .article-row { grid-template-columns: 36px 1fr; } .article-row .read-btn { display: none; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">Scott <span>Hacker</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#work">Work</a></li>
+    <li><a href="index.html">Articles</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Articles</span></div>
+    <div class="page-label">Practical Insights</div>
+    <h1 class="page-title">Articles &amp; How-To Guides</h1>
+    <p class="page-subtitle">Practical perspectives on quality, Lean thinking, and building improvement cultures that last -- from Kansas City, MO.</p>
+  </div>
+</div>
+<div class="page-body">
+  <div class="section-heading">All Articles</div>
+  <div class="section-divider"></div>
+  <div class="article-row">
+    <div class="article-num">01</div>
+    <div>
+      <div class="article-cat">Lean Thinking</div>
+      <a href="gemba-walks.html" class="article-title-link">Why Gemba Walks Beat Dashboard Reviews Every Time</a>
+      <p class="article-excerpt">The most important data in any operation is not on a screen -- it is on the floor. Here is how making gemba walks a non-negotiable habit transforms what you see, know, and fix.</p>
+      <div class="article-tags"><span class="article-tag">Gemba</span><span class="article-tag">Leadership</span><span class="article-tag">Lean</span></div>
+    </div>
+    <div><a href="gemba-walks.html" class="read-btn">Read</a></div>
+  </div>
+  <div class="article-row">
+    <div class="article-num">02</div>
+    <div>
+      <div class="article-cat">Problem Solving</div>
+      <a href="8d-field-guide.html" class="article-title-link">The 8D Process: A Practitioner's Field Guide</a>
+      <p class="article-excerpt">8D is more than a corrective action form. When applied with rigor, it is a structured thinking process that builds organizational problem-solving muscle.</p>
+      <div class="article-tags"><span class="article-tag">8D</span><span class="article-tag">Root Cause</span><span class="article-tag">Corrective Action</span></div>
+    </div>
+    <div><a href="8d-field-guide.html" class="read-btn">Read</a></div>
+  </div>
+  <div class="article-row">
+    <div class="article-num">03</div>
+    <div>
+      <div class="article-cat">Culture Change</div>
+      <a href="ci-culture.html" class="article-title-link">Building a CI Culture Without the Poster Campaign</a>
+      <p class="article-excerpt">Real continuous improvement culture is not built with slogans. It is built through daily habits, leadership behavior, and making it safe to say "this process is broken."</p>
+      <div class="article-tags"><span class="article-tag">CI Culture</span><span class="article-tag">Leadership</span><span class="article-tag">Change Mgmt</span></div>
+    </div>
+    <div><a href="ci-culture.html" class="read-btn">Read</a></div>
+  </div>
+  <div class="article-row">
+    <div class="article-num">04</div>
+    <div>
+      <div class="article-cat">Kanban</div>
+      <a href="kanban-manufacturing.html" class="article-title-link">Kanban in Manufacturing: Beyond the Sticky Notes</a>
+      <p class="article-excerpt">Most Kanban implementations fail because they treat it as a visual tool, not a system. A step-by-step guide to designing a pull system that actually reduces lead time.</p>
+      <div class="article-tags"><span class="article-tag">Kanban</span><span class="article-tag">Pull Systems</span><span class="article-tag">Lean Flow</span></div>
+    </div>
+    <div><a href="kanban-manufacturing.html" class="read-btn">Read</a></div>
+  </div>
+  <div class="article-row">
+    <div class="article-num">05</div>
+    <div>
+      <div class="article-cat">Quality Systems</div>
+      <a href="practical-fmea.html" class="article-title-link">FMEA That Actually Gets Used: Making Risk Analysis Practical</a>
+      <p class="article-excerpt">FMEAs often end up as shelf documents. Here is how to structure failure mode analysis so it becomes a living tool your team actually references.</p>
+      <div class="article-tags"><span class="article-tag">FMEA</span><span class="article-tag">Risk Analysis</span><span class="article-tag">Quality Systems</span></div>
+    </div>
+    <div><a href="practical-fmea.html" class="read-btn">Read</a></div>
+  </div>
+  <div class="article-row">
+    <div class="article-num">06</div>
+    <div>
+      <div class="article-cat">Metrics and KPIs</div>
+      <a href="quality-metrics.html" class="article-title-link">The 5 Quality Metrics Every CI Manager Should Track</a>
+      <p class="article-excerpt">Not all metrics are created equal. Here are the five indicators I always prioritize -- and why the ones most companies track are often the wrong ones.</p>
+      <div class="article-tags"><span class="article-tag">Metrics</span><span class="article-tag">KPIs</span><span class="article-tag">Data</span></div>
+    </div>
+    <div><a href="quality-metrics.html" class="read-btn">Read</a></div>
+  </div>
+</div>
+<footer>
+  <div class="footer-brand">Scott <span>Hacker</span>, MBA</div>
+  <div class="footer-copy">Quality and CI Leader -- Kansas City, MO</div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../case-studies/index.html">Case Studies</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

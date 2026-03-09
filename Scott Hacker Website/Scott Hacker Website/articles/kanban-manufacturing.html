@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanban in Manufacturing: Beyond the Sticky Notes | Scott Hacker MBA | Kansas City Quality Leader</title>
+<meta name="description" content="Scott Hacker, Lean Six Sigma Green Belt and CI Manager in Kansas City MO, gives a step-by-step guide to designing a Kanban pull system that actually reduces lead time and improves flow.">
+<meta name="keywords" content="Scott Hacker, Scott Hacker Kansas City, Kanban manufacturing, pull system design, lean manufacturing, continuous improvement Missouri">
+<meta name="author" content="Scott Hacker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.scottghacker.com/articles/kanban-manufacturing.html">
+<meta property="og:title" content="Kanban in Manufacturing: Beyond the Sticky Notes | Scott Hacker MBA">
+<meta property="og:description" content="Scott Hacker, Lean Six Sigma Green Belt and CI Manager in Kansas City MO, gives a step-by-step guide to designing a Kanban pull system that actually reduces lead time and improves flow.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.scottghacker.com/articles/kanban-manufacturing.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kanban in Manufacturing: Beyond the Sticky Notes",
+  "author": {"@type": "Person", "name": "Scott Hacker", "url": "https://www.scottghacker.com"},
+  "publisher": {"@type": "Person", "name": "Scott Hacker"},
+  "description": "Scott Hacker, Lean Six Sigma Green Belt and CI Manager in Kansas City MO, gives a step-by-step guide to designing a Kanban pull system that actually reduces lead time and improves flow.",
+  "keywords": "Kanban manufacturing, pull system, lean flow, Scott Hacker, Kansas City"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0d1b2a;--steel:#4a7fa5;--sky:#7eb8d4;--accent:#c9a84c;--accent-light:#e8c96b;--white:#f8f9fa;--gray-light:#e8ecef;--gray-mid:#b0bec5;--gray-dark:#546e7a;--text:#1c2b3a;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--text);background:var(--white)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,42,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.25);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .nav-brand{font-family:var(--serif);color:var(--white);font-size:1.1rem;font-weight:700;text-decoration:none}
+  .nav-brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;list-style:none}
+  .nav-links a{color:var(--gray-mid);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .article-hero{background:var(--navy);padding:120px 0 64px;position:relative;overflow:hidden}
+  .article-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(74,127,165,0.15) 0%,transparent 70%)}
+  .article-inner{max-width:760px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+  .article-breadcrumb{font-size:0.75rem;color:var(--gray-mid);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .article-breadcrumb a{color:var(--sky);text-decoration:none}
+  .article-breadcrumb span{opacity:0.5}
+  .article-category{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .article-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px}
+  .article-byline{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1)}
+  .byline-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0}
+  .byline-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .byline-name{font-weight:600;font-size:0.92rem;color:var(--white)}
+  .byline-meta{font-size:0.78rem;color:var(--gray-mid);margin-top:2px}
+  .article-body{max-width:760px;margin:0 auto;padding:64px 40px 100px;line-height:1.85}
+  .article-body p{font-size:1.05rem;color:#2c3e50;margin-bottom:24px;line-height:1.85}
+  .article-body h2{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--navy);margin:48px 0 20px;line-height:1.25}
+  .article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--navy);margin:32px 0 14px}
+  .article-body ul,.article-body ol{padding-left:24px;margin-bottom:24px}
+  .article-body li{font-size:1.02rem;color:#2c3e50;margin-bottom:10px;line-height:1.75}
+  .article-body strong{color:var(--navy);font-weight:600}
+  .article-body blockquote{border-left:4px solid var(--accent);padding:20px 24px;background:#f8f6f0;border-radius:0 6px 6px 0;margin:32px 0;font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--navy);line-height:1.6}
+  .callout{background:var(--navy);border-radius:8px;padding:28px 32px;margin:36px 0;color:var(--white)}
+  .callout-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:10px}
+  .callout p{color:var(--gray-mid);font-size:0.95rem;margin-bottom:0}
+  .divider{width:56px;height:3px;background:var(--accent);margin:40px 0}
+  .article-footer{background:var(--gray-light);border-top:1px solid #dde3e8;padding:48px 0}
+  .article-footer-inner{max-width:760px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+  .author-card{display:flex;gap:20px;align-items:flex-start}
+  .author-photo{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0}
+  .author-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .author-card-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .author-card-bio{font-size:0.85rem;color:var(--gray-dark);line-height:1.6;max-width:400px}
+  .back-link{font-size:0.82rem;font-weight:600;color:var(--steel);text-decoration:none;letter-spacing:0.05em;display:flex;align-items:center;gap:6px}
+  .back-link:hover{color:var(--navy)}
+  .back-link::before{content:"←"}
+  footer{background:var(--navy);border-top:1px solid rgba(201,168,76,0.2);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .footer-brand{font-family:var(--serif);color:var(--white);font-size:1rem;font-weight:700}
+  .footer-brand span{color:var(--accent)}
+  .footer-copy{font-size:0.75rem;color:var(--gray-dark)}
+  @media(max-width:700px){.article-inner,.article-body{padding-left:24px;padding-right:24px}nav{padding:0 20px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">Scott <span>Hacker</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#content-hub">Insights</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="article-hero">
+  <div class="article-inner">
+    <div class="article-breadcrumb">
+      <a href="../index.html">Home</a><span>/</span>
+      <a href="index.html">Articles</a><span>/</span>
+      <span>Kanban / Lean Flow</span>
+    </div>
+    <div class="article-category">Kanban / Lean Flow</div>
+    <h1 class="article-title">Kanban in Manufacturing: Beyond the Sticky Notes</h1>
+    <div class="article-byline">
+      <div class="byline-avatar"><img src="../headshot_web.jpg" alt="Scott Hacker MBA - Quality Manager Kansas City MO"></div>
+      <div>
+        <div class="byline-name">Scott Hacker, MBA</div>
+        <div class="byline-meta">Quality &amp; CI Manager · Safe Fleet · Kansas City, MO</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="article-body">
+
+  <p>Most Kanban implementations I've seen fail in the same way: someone attends a Lean training, comes back energized, puts sticky notes on a whiteboard, calls it a Kanban system, and then wonders why nothing changed. Six months later the board is ignored and the team is back to pushing product based on a weekly schedule guess.</p>
+
+  <p>Kanban is not a visualization tool. It's a <strong>replenishment signaling system</strong> — a mechanism for letting actual demand pull production rather than forecast push it. When designed correctly, it reduces lead time, improves availability, lowers inventory carrying costs, and makes production scheduling dramatically simpler. When designed incorrectly, it's just a wall decoration.</p>
+
+  <blockquote>"The goal of Kanban is not to manage inventory. It is to expose the true pace of demand and respond to it with discipline."</blockquote>
+
+  <h2>The Core Principle: Pull, Don't Push</h2>
+  <p>Traditional push scheduling works like this: someone forecasts demand, builds a schedule, and production makes what the schedule says regardless of what's actually being consumed. The result is inventory in the wrong place, at the wrong time, in the wrong quantities.</p>
+  <p>Pull systems work in reverse. <strong>Nothing is produced until a downstream signal authorizes it.</strong> A Kanban card, empty bin, or electronic signal from the point of consumption triggers replenishment. Production responds to real demand, not a forecast.</p>
+
+  <div class="divider"></div>
+  <h2>Step-by-Step: Designing a Kanban System That Works</h2>
+
+  <h3>Step 1: Choose Your Items Carefully</h3>
+  <p>Not everything belongs in a Kanban system. The best candidates share these characteristics:</p>
+  <ul>
+    <li>Relatively stable, predictable demand (coefficient of variation below ~0.5)</li>
+    <li>Short replenishment lead times relative to demand variability</li>
+    <li>High enough volume to justify the design effort</li>
+    <li>Significant enough availability impact to warrant pull discipline</li>
+  </ul>
+  <p>Low-volume, highly variable, or very long lead-time items are often better managed through min/max reorder points or MRP. Trying to Kanban everything is a common mistake.</p>
+
+  <h3>Step 2: Calculate Your Kanban Parameters — Do the Math</h3>
+  <p>This is where most implementations fail. People eyeball the bin sizes rather than calculating them, and then wonder why they're constantly stocking out or drowning in inventory. The core formula:</p>
+
+  <div class="callout">
+    <div class="callout-title">Kanban Quantity Formula</div>
+    <p><strong>Number of Kanbans = (Average Daily Demand × Replenishment Lead Time × Safety Factor) ÷ Container Size</strong><br><br>
+    Round up to the nearest whole number. The safety factor (typically 1.2–1.5) accounts for demand variability. Recalculate quarterly as demand patterns evolve.</p>
+  </div>
+
+  <h3>Step 3: Design the Signal — Physical or Electronic</h3>
+  <p>The signal is the heartbeat of the system. It must be:</p>
+  <ul>
+    <li><strong>Visible</strong> — anyone on the floor can see the state of the system at a glance</li>
+    <li><strong>Simple</strong> — returning a card or moving a bin takes seconds, not minutes</li>
+    <li><strong>Disciplined</strong> — the signal must travel immediately when triggered, not at the end of the shift</li>
+  </ul>
+  <p>For most manufacturing environments, a two-bin physical system is the right starting point. Bin A is in use; when it empties, it becomes the replenishment trigger and Bin B takes over. The empty bin goes back to production. When it returns full, the cycle repeats.</p>
+
+  <h3>Step 4: Train for Discipline, Not Just Awareness</h3>
+  <p>Kanban training that covers only "here's how it works" produces a team that understands the concept but breaks the system under pressure. The training must also cover:</p>
+  <ul>
+    <li>What to do when a signal is ignored or delayed</li>
+    <li>How to escalate when replenishment isn't happening on time</li>
+    <li>Why overproducing "just in case" defeats the entire system</li>
+    <li>How individual signal discipline connects to customer availability</li>
+  </ul>
+
+  <h3>Step 5: Run Parallel Systems Before Cutover</h3>
+  <p>For high-risk product lines, run the Kanban system in parallel with your existing scheduling for two to four weeks. This surfaces gaps in your parameter calculations without risking stockouts. It also builds team confidence before the old system is turned off.</p>
+
+  <h3>Step 6: Review and Recalibrate Regularly</h3>
+  <p>A Kanban system that was perfectly tuned six months ago may be wrong today. Demand patterns shift, lead times change, new products are added. Build a quarterly review into your standard work: check actual versus calculated consumption, adjust quantities if needed, and confirm signals are being processed with the right discipline.</p>
+
+  <div class="divider"></div>
+  <h2>The Most Common Failures — and How to Avoid Them</h2>
+  <ul>
+    <li><strong>Skipping the math.</strong> Intuitive bin sizes lead to chronic stockouts or excess inventory. Calculate.</li>
+    <li><strong>Not enforcing signal discipline.</strong> One supervisor who lets signals pile up until the end of the day breaks the whole loop. Signal timing is non-negotiable.</li>
+    <li><strong>Kanbanning everything.</strong> Highly variable, low-volume items don't belong in a pull system. Be selective.</li>
+    <li><strong>Never recalibrating.</strong> A Kanban system needs maintenance like any other process. Schedule the review.</li>
+    <li><strong>Treating it as a project with an end date.</strong> Kanban is an operating discipline, not an initiative. It runs indefinitely or it doesn't run at all.</li>
+  </ul>
+
+  <p>Done right, Kanban simplifies your operation and makes customer availability a predictable outcome rather than a daily scramble. The sticky notes are optional. The discipline is not.</p>
+  <p><em>— Scott Hacker, MBA | Quality &amp; CI Manager | Kansas City, MO</em></p>
+
+</div>
+<div class="article-footer">
+  <div class="article-footer-inner">
+    <div class="author-card">
+      <div class="author-photo"><img src="../headshot_web.jpg" alt="Scott Hacker MBA"></div>
+      <div>
+        <div class="author-card-name">Scott Hacker, MBA</div>
+        <p class="author-card-bio">Quality and Continuous Improvement Manager at Safe Fleet in Kansas City, MO. Lean Six Sigma Green Belt (Purdue). Writing about quality systems, CI leadership, and practical Lean thinking.</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-link">Back to All Articles</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-brand">Scott <span>Hacker</span>, MBA</div>
+  <div class="footer-copy">Quality &amp; CI Leader · Kansas City, MO · &copy; 2025</div>
+</footer>
+</body>
+</html>

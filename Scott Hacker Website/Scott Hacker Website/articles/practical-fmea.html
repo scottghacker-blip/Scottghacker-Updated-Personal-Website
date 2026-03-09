@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMEA That Actually Gets Used: Making Risk Analysis Practical | Scott Hacker MBA | Kansas City Quality Leader</title>
+<meta name="description" content="Scott Hacker, Quality Manager and Lean Six Sigma Green Belt in Kansas City MO, explains how to build FMEAs that become living tools your team actually uses — not shelf documents.">
+<meta name="keywords" content="Scott Hacker, Scott Hacker Kansas City, FMEA, failure mode effects analysis, risk analysis manufacturing, quality systems Missouri, PFMEA">
+<meta name="author" content="Scott Hacker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.scottghacker.com/articles/practical-fmea.html">
+<meta property="og:title" content="FMEA That Actually Gets Used | Scott Hacker MBA | Kansas City Quality Manager">
+<meta property="og:description" content="Scott Hacker, Quality Manager and Lean Six Sigma Green Belt in Kansas City MO, explains how to build FMEAs that become living tools your team actually uses — not shelf documents.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.scottghacker.com/articles/practical-fmea.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FMEA That Actually Gets Used: Making Risk Analysis Practical",
+  "author": {"@type": "Person", "name": "Scott Hacker", "url": "https://www.scottghacker.com"},
+  "publisher": {"@type": "Person", "name": "Scott Hacker"},
+  "description": "Scott Hacker, Quality Manager and Lean Six Sigma Green Belt in Kansas City MO, explains how to build FMEAs that become living tools your team actually uses — not shelf documents.",
+  "keywords": "FMEA, failure mode effects analysis, quality systems, Scott Hacker, Kansas City"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0d1b2a;--steel:#4a7fa5;--sky:#7eb8d4;--accent:#c9a84c;--accent-light:#e8c96b;--white:#f8f9fa;--gray-light:#e8ecef;--gray-mid:#b0bec5;--gray-dark:#546e7a;--text:#1c2b3a;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--text);background:var(--white)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,42,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.25);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .nav-brand{font-family:var(--serif);color:var(--white);font-size:1.1rem;font-weight:700;text-decoration:none}
+  .nav-brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;list-style:none}
+  .nav-links a{color:var(--gray-mid);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+  .nav-links a:hover{color:var(--accent)}
+  .article-hero{background:var(--navy);padding:120px 0 64px;position:relative;overflow:hidden}
+  .article-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(74,127,165,0.15) 0%,transparent 70%)}
+  .article-inner{max-width:760px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+  .article-breadcrumb{font-size:0.75rem;color:var(--gray-mid);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+  .article-breadcrumb a{color:var(--sky);text-decoration:none}
+  .article-breadcrumb span{opacity:0.5}
+  .article-category{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .article-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:20px}
+  .article-byline{display:flex;align-items:center;gap:16px;margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1)}
+  .byline-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0}
+  .byline-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .byline-name{font-weight:600;font-size:0.92rem;color:var(--white)}
+  .byline-meta{font-size:0.78rem;color:var(--gray-mid);margin-top:2px}
+  .article-body{max-width:760px;margin:0 auto;padding:64px 40px 100px;line-height:1.85}
+  .article-body p{font-size:1.05rem;color:#2c3e50;margin-bottom:24px;line-height:1.85}
+  .article-body h2{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--navy);margin:48px 0 20px;line-height:1.25}
+  .article-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--navy);margin:32px 0 14px}
+  .article-body ul,.article-body ol{padding-left:24px;margin-bottom:24px}
+  .article-body li{font-size:1.02rem;color:#2c3e50;margin-bottom:10px;line-height:1.75}
+  .article-body strong{color:var(--navy);font-weight:600}
+  .article-body blockquote{border-left:4px solid var(--accent);padding:20px 24px;background:#f8f6f0;border-radius:0 6px 6px 0;margin:32px 0;font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--navy);line-height:1.6}
+  .callout{background:var(--navy);border-radius:8px;padding:28px 32px;margin:36px 0;color:var(--white)}
+  .callout-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:10px}
+  .callout p{color:var(--gray-mid);font-size:0.95rem;margin-bottom:0}
+  .divider{width:56px;height:3px;background:var(--accent);margin:40px 0}
+  .article-footer{background:var(--gray-light);border-top:1px solid #dde3e8;padding:48px 0}
+  .article-footer-inner{max-width:760px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+  .author-card{display:flex;gap:20px;align-items:flex-start}
+  .author-photo{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0}
+  .author-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .author-card-name{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .author-card-bio{font-size:0.85rem;color:var(--gray-dark);line-height:1.6;max-width:400px}
+  .back-link{font-size:0.82rem;font-weight:600;color:var(--steel);text-decoration:none;letter-spacing:0.05em;display:flex;align-items:center;gap:6px}
+  .back-link:hover{color:var(--navy)}
+  .back-link::before{content:"←"}
+  footer{background:var(--navy);border-top:1px solid rgba(201,168,76,0.2);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .footer-brand{font-family:var(--serif);color:var(--white);font-size:1rem;font-weight:700}
+  .footer-brand span{color:var(--accent)}
+  .footer-copy{font-size:0.75rem;color:var(--gray-dark)}
+  @media(max-width:700px){.article-inner,.article-body{padding-left:24px;padding-right:24px}nav{padding:0 20px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">Scott <span>Hacker</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#content-hub">Insights</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+<div class="article-hero">
+  <div class="article-inner">
+    <div class="article-breadcrumb">
+      <a href="../index.html">Home</a><span>/</span>
+      <a href="index.html">Articles</a><span>/</span>
+      <span>Quality Systems</span>
+    </div>
+    <div class="article-category">Quality Systems</div>
+    <h1 class="article-title">FMEA That Actually Gets Used: Making Risk Analysis Practical</h1>
+    <div class="article-byline">
+      <div class="byline-avatar"><img src="../headshot_web.jpg" alt="Scott Hacker MBA - Quality Manager Kansas City MO"></div>
+      <div>
+        <div class="byline-name">Scott Hacker, MBA</div>
+        <div class="byline-meta">Quality &amp; CI Manager · Safe Fleet · Kansas City, MO</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="article-body">
+
+  <p>In my experience, the average FMEA lives in one of two states: it's either being frantically updated the week before a customer audit, or it hasn't been opened since the product launched. Neither is acceptable. Both are common.</p>
+
+  <p>The Failure Mode and Effects Analysis is one of the most powerful tools in a quality engineer's kit — a structured, proactive method for identifying what could go wrong, how bad it would be, and what you're doing about it. When built and maintained well, an FMEA is a living risk register that guides design reviews, informs control plans, and protects customers. When treated as a compliance checkbox, it's expensive paperwork.</p>
+
+  <blockquote>"An FMEA that sits on a shelf isn't risk management. It's documentation theater."</blockquote>
+
+  <h2>Why FMEAs Become Shelf Documents</h2>
+  <p>There are consistent reasons why FMEAs lose their usefulness after launch:</p>
+  <ul>
+    <li>They were built by one engineer in isolation, without input from production, maintenance, or the customer-facing team</li>
+    <li>The RPN (Risk Priority Number) scoring was rushed or politically influenced to avoid triggering action items</li>
+    <li>There's no defined owner and no process for keeping it updated when the process changes</li>
+    <li>It's so long and complex that nobody wants to open it</li>
+    <li>The recommended actions were never completed — they live in the document as "planned" indefinitely</li>
+  </ul>
+
+  <div class="divider"></div>
+  <h2>Building an FMEA That Stays Alive</h2>
+
+  <h3>1. Build It With the Right Team in the Room</h3>
+  <p>The most valuable FMEA insights don't come from the quality engineer — they come from the people who live with the process every day. Operators know which step always requires a second attempt. Maintenance knows which component fails first. The shipping team knows which packaging configuration gets damaged in transit.</p>
+  <p>A cross-functional FMEA session with 4–6 people who touch the process will surface failure modes that a solo engineer would never identify. Schedule it as a working session, not a review meeting. Bring a facilitator, a whiteboard, and the process flow diagram.</p>
+
+  <h3>2. Be Honest About RPN Scoring</h3>
+  <p>Risk Priority Numbers lose all value when teams game the scoring to avoid action items. If a failure mode has a Severity of 9 but the team rates Detection at 1 to bring the RPN below the threshold — that's not analysis, that's avoidance.</p>
+  <p>A better approach: <strong>separate your response logic from the RPN.</strong> Any failure mode with a Severity of 9 or 10 deserves a mitigation conversation regardless of the calculated RPN. Severity is not negotiable; it reflects the worst-case impact on the customer or end user.</p>
+
+  <div class="callout">
+    <div class="callout-title">The RPN Trap</div>
+    <p>Don't let teams focus exclusively on RPN thresholds. A failure mode with Severity=10, Occurrence=1, Detection=1 has an RPN of 10 — but it represents a catastrophic risk that deserves a serious conversation. Always review high-severity items regardless of RPN.</p>
+  </div>
+
+  <h3>3. Connect the FMEA to Your Control Plan</h3>
+  <p>The FMEA and the Control Plan should be siblings, not strangers. Every high-risk failure mode in the FMEA should have a corresponding control in the Control Plan. If the FMEA identifies "incorrect torque application" as a failure mode with high severity, the Control Plan should specify exactly how torque is verified, at what frequency, and by whom.</p>
+  <p>When the two documents are aligned, an operator following the Control Plan is automatically executing the risk mitigations identified in the FMEA. That's the system working as designed.</p>
+
+  <h3>4. Define a Living Document Process</h3>
+  <p>Every FMEA needs a designated owner and a defined trigger list for updates. At minimum, the FMEA should be reviewed and updated when:</p>
+  <ul>
+    <li>A new defect or field failure occurs that wasn't previously identified</li>
+    <li>The process, material, or equipment changes</li>
+    <li>A customer complaint reveals a failure mode that was missed or underscored</li>
+    <li>An annual scheduled review is due</li>
+  </ul>
+  <p>The review doesn't have to be a lengthy event. A 30-minute session with the process owner, a quality representative, and the operator is enough to confirm whether the document still reflects reality.</p>
+
+  <h3>5. Keep It Readable</h3>
+  <p>An FMEA with 400 rows and 22 columns is not a useful tool — it's a monument to process complexity. Consider breaking large FMEAs into sub-system documents. Use color coding to make high-RPN items immediately visible. Put the most critical failure modes on the first page. The goal is a document that an engineer can open, navigate, and act on in under five minutes.</p>
+
+  <div class="divider"></div>
+  <h2>Closing the Loop: From FMEA to Prevention</h2>
+  <p>The ultimate purpose of an FMEA is prevention — stopping failures before they reach customers. That only happens when the recommended actions are completed, verified, and reflected in updated standard work and control plans. Track open action items from the FMEA in your standard corrective action system. Review them in your quality meetings. Close them with evidence.</p>
+  <p>The FMEA is only as valuable as the actions it generates. A document full of "planned" recommendations that never get implemented is worse than no FMEA at all — it creates false confidence that the risks are managed when they aren't.</p>
+  <p><em>— Scott Hacker, MBA | Quality &amp; CI Manager | Kansas City, MO</em></p>
+
+</div>
+<div class="article-footer">
+  <div class="article-footer-inner">
+    <div class="author-card">
+      <div class="author-photo"><img src="../headshot_web.jpg" alt="Scott Hacker MBA"></div>
+      <div>
+        <div class="author-card-name">Scott Hacker, MBA</div>
+        <p class="author-card-bio">Quality and Continuous Improvement Manager at Safe Fleet in Kansas City, MO. Lean Six Sigma Green Belt (Purdue). Writing about quality systems, CI leadership, and practical Lean thinking.</p>
+      </div>
+    </div>
+    <a href="index.html" class="back-link">Back to All Articles</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-brand">Scott <span>Hacker</span>, MBA</div>
+  <div class="footer-copy">Quality &amp; CI Leader · Kansas City, MO · &copy; 2025</div>
+</footer>
+</body>
+</html>
